@@ -1,0 +1,47 @@
+一.SQLiteDatabase的使用方式
+SQLite是安卓常用的小型轻量级数据库
+常用函数
+打开或者创建数据库
+SQLiteDatabase database = SQLiteDatabase.openOrCreateDatabase(file, null);
+执行SQL语句
+database.execSQL(String sql);//执行SQL语句,由于不会返回结果,所以一般查询不用此函数
+查询结果集	
+database.rawQuery("select * from classlist", null);
+//增删改查函数
+Cursor cursor = database.query("classList", new String[]{"name","idx"}, null, null, null, null, "idx asc", null);
+database.delete(table, whereClause, whereArgs)
+database.update(table, values, whereClause, whereArgs)
+database.insert(table, nullColumnHack, values)
+
+关闭数据库
+database.close();
+
+Cursor类的常用函数
+判断cursor中是否还有下一个数据,返回true或者false,并且指针会往下移动一格
+cursor.moveToNext();
+移动指针到第一格
+cursor.moveToFirst();
+移动指针到最后
+cursor.moveToLast();
+获取数据的个数
+cursor.getCount();
+根据字段的名称来获取该字段所在的列的索引位置
+cursor.getColumnIndex(String columnName)
+根据列的索引来获取对应的数据
+cursor.getString(columnIndex)
+cursor.getInt(columnIndex)
+关闭Cursor对象
+cursor.close();
+
+二. 安卓的单元测试
+步骤:
+1. 创建一个类继承于AndroidTestCase
+2. 在该类中创建函数,并且在函数中调用一下要测试的函数
+3. 在AndroidMenifest.xml中添加
+<!-- 配置单元测试框架的启动装置 -->
+<instrumentation
+        android:name="android.test.InstrumentationTestRunner"
+        android:targetPackage="edu.feicui.contacts1603" />
+<!-- 单元测试框架依赖库引入 -->
+<uses-library android:name="android.test.runner" />
+4. 打开outline视图,点击要测试的函数debug as 如果显示绿条说明逻辑正确,并且可以在logcat中查看结果

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <!-- 开机启动 -->
+   <RelativeLayout
+       style="@style/Settingitem"
+        >
+       <TextView 
+           style="@style/SettingText"
+           android:text="@string/setting_openon"
+           />
+      <!-- 开关 -->
+      <ToggleButton 
+          style="@style/SettingToggleButton"
+          />
+   </RelativeLayout>
+	
+   <!-- 通知图标 -->
+   <RelativeLayout
+       style="@style/Settingitem"
+        >
+       <TextView 
+           style="@style/SettingText"
+           android:text="@string/setting_notification"
+           />
+      <!-- 开关 -->
+      <ToggleButton
+          android:id="@+id/setting_notification" 
+          style="@style/SettingToggleButton"
+          />
+   </RelativeLayout>
+   
+   <!-- 消息推送 -->
+   <RelativeLayout
+       style="@style/Settingitem"
+        >
+       <TextView 
+           style="@style/SettingText"
+           android:text="@string/setting_newspush"
+           />
+      <!-- 开关 -->
+      <ToggleButton 
+          style="@style/SettingToggleButton"
+          />
+   </RelativeLayout>
+   
+   <!-- 帮助说明 -->
+   <RelativeLayout
+       android:id="@+id/setting_help"
+       style="@style/Settingitem"
+        >
+       <TextView 
+           style="@style/SettingText"
+           android:text="@string/setting_help"
+           />
+      <ImageView
+          style="@style/SettingImageview"
+          />
+   </RelativeLayout>
+   
+   <!-- 意见反馈 -->
+   <RelativeLayout
+       style="@style/Settingitem"
+        >
+       <TextView 
+           style="@style/SettingText"
+           android:text="@string/setting_advice"
+           />
+      <ImageView
+          style="@style/SettingImageview"
+          />
+   </RelativeLayout>
+   
+   <!-- 好友分享 -->
+   <RelativeLayout
+       style="@style/Settingitem"
+        >
+       <TextView 
+           style="@style/SettingText"
+           android:text="@string/setting_feiendsshare"
+           />
+      <ImageView
+          style="@style/SettingImageview"
+          />
+   </RelativeLayout>
+   
+   <!-- 版本更新 -->
+   <RelativeLayout
+       style="@style/Settingitem"
+        >
+       <TextView 
+           style="@style/SettingText"
+           android:text="@string/setting_versionupdating"
+           />
+      <ImageView
+          style="@style/SettingImageview"
+          />
+   </RelativeLayout>
+   
+   <!-- 关于我们 -->
+   <RelativeLayout
+       android:id="@+id/setting_aboutus"
+       style="@style/Settingitem"
+        >
+       <TextView 
+           style="@style/SettingText"
+           android:text="@string/setting_aboutus"
+           />
+      <ImageView
+          style="@style/SettingImageview"
+          />
+   </RelativeLayout>
+    
+
+</LinearLayout>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+创建anim文件，将动画文件放置在anim下
+
+alpha ———— 透明度动画
+android:fromAlpha=""    0————透明       从完全透明到完全不透明
+android:toAlpha=""      1————不透明
+android:duration="2000"  动画中间持续的时间（毫秒值）  ——2s
+android:repeatCount="3"  动画重复播放几次
+android:fillAfter="true" 动画结束后是否要保存最后的状态
+动画重复模式
+android:repeatMode="restart"   每次单程
+android:repeatMode="reverse"   每次会返程
+
+ -->
+<alpha
+    android:fromAlpha="0"
+    android:toAlpha="0.5"
+    android:duration="2000"
+    android:repeatCount="2"
+    android:repeatMode="reverse"
+    android:fillAfter="true"
+    xmlns:android="http://schemas.android.com/apk/res/android"/>
+    
+

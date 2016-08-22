@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+set ————所有动画的组合
+
+
+ -->
+<set>
+  <alpha
+    android:fromAlpha="0"
+    android:toAlpha="0.5"
+    android:duration="2000"
+    android:repeatCount="3"
+    android:repeatMode="reverse"
+    android:fillAfter="true"
+    xmlns:android="http://schemas.android.com/apk/res/android"/>  
+    
+   <scale
+ android:duration="2000"
+ android:repeatCount="3"
+ android:repeatMode="restart"  
+ android:fromXScale="1"
+ android:toXScale="3"
+ android:fromYScale="1"
+ android:toYScale="2"
+ android:pivotX="50%"
+ android:pivotY="50%"
+xmlns:android="http://schemas.android.com/apk/res/android"/> 
+
+   <rotate
+android:duration="2000"
+android:repeatCount="3"
+android:repeatMode="restart"   
+android:fromDegrees="0"
+android:toDegrees="360"   
+android:pivotX="100%"
+android:pivotY="100%"
+android:fillAfter="true"
+xmlns:android="http://schemas.android.com/apk/res/android"/>
+   
+   <translate
+android:duration="2000"
+android:repeatCount="3"
+android:repeatMode="restart"  
+android:fillAfter="true"    
+android:fromXDelta="0%"    
+android:toXDelta="300%"
+android:fromYDelta="0%"
+android:toYDelta="0%"
+android:interpolator="@android:anim/anticipate_overshoot_interpolator"
+xmlns:android="http://schemas.android.com/apk/res/android"/>
+
+</set> 
+    
+

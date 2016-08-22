@@ -1,0 +1,26 @@
+一.CheckBox在ListView中错乱问题的解决方式
+产生问题的原因
+ListView的重用机制是将移走的item放到下面进行重用,导致checkbox的
+状态随之发生异常
+
+如何去解决这个问题
+方式一. 不使用ListView的重用
+方式二. 定义一个集合,将选中的checkbox的索引记录在集合中,然后在getView函数中判断
+集合中是否包含当前的索引,包含说明是选中状态,否则说明是未选中
+方式三. 在对象中定义一个属性,用于记录每个item中checkbox的状态,属性的值根据选中状态
+时时的更新
+
+二. 删除应用程序
+Intent it = new Intent(Intent.ACTION_DELETE);
+it.setData(Uri.parse("package:"+...));
+startActivity(it);
+删除应用程序需要提供包名,前面必须添加package:开头
+
+三. 自定义CheckBox背景样式
+XML中给CheckBox添加button属性,指向一个xml文件
+<selector xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+    <item android:state_checked="true" android:drawable="@drawable/check_rect_correct_checked"/>
+    <item android:state_checked="false" android:drawable="@drawable/check_rect_correct_default"/>
+
+</selector>

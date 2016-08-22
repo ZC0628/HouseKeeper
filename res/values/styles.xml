@@ -1,0 +1,151 @@
+
+
+
+
+<!-- 通讯录中的所有常用的控件，可以有继承关系，在XML文件中通过style属性来引用style -->
+<resources>
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+    
+     <style name="telephone_textview">
+       <item name ="android:background">@color/slateblue</item>  
+       <item name ="android:layout_width">match_parent</item>     
+       <item name ="android:layout_height">@dimen/telephone_height</item>   
+       <item name ="android:gravity">center</item>   
+       <item name ="android:textColor">@color/white</item>   
+       <item name ="android:textSize">@dimen/telephone_textsize</item>   
+    </style>
+    
+	<style name="telephone_listview">
+		<item name = "android:layout_width">match_parent</item>
+		<item name = "android:layout_height">match_parent</item>
+		<item name = "android:cacheColorHint">@color/transparent</item>
+	</style>
+	
+	
+	<style name = "telephone_item_textview">
+	    <item name = "android:layout_width">wrap_content</item>
+	    <item name = "android:layout_height">wrap_content</item>
+	    <item name = "android:text">@string/text_telephone_item</item>
+	    <item name = "android:textSize">@dimen/telephone_listview_item_textsize</item>
+	    <item name = "android:layout_marginLeft">@dimen/telephone_listview_item_marginleft</item>
+	    <item name = "android:textColor">@color/black</item>
+	    <item name = "android:layout_margin">@dimen/telephone_item_layout_margin</item>
+	</style>
+	
+	<style name = "telephone_item_imageview">
+	     <item name = "android:layout_width">@dimen/telephone_item_Imageview_width</item>
+	     <item name = "android:layout_height">@dimen/telephone_item_Imageview_height</item>
+	     <item name = "android:src">@drawable/tubiao</item>
+	     <item name = "android:layout_marginRight">@dimen/telephone_listview_item_marginright</item>
+	     <item name = "android:layout_alignParentRight">true</item>
+	      <item name = "android:layout_margin">@dimen/telephone_item_layout_margin</item>
+	</style>
+	
+	<!-- logo 界面 -->
+    <style name = "activity_logo">
+        <item name = "android:layout_width">match_parent</item>
+        <item name = "android:layout_height">match_parent</item>
+        <item name = "android:src">@drawable/logo</item>
+        <item name = "android:layout_centerInParent">true</item>
+        <item name = "android:scaleType">fitXY</item>
+    </style>   
+    
+    
+    <!-- 主界面样式 		android:clickable 属性用于给文字添加点击-->
+    <style name = "activity_main_Group">
+     <item name = "android:padding">10dp</item>
+     <item name = "android:textSize">16sp</item>
+     <item name = "android:textColor">@color/black</item>
+     <item name = "android:gravity">center</item>
+     <item name = "android:onClick">doclick</item>
+     <item name = "android:background">@drawable/home_entity_item</item>
+     <item name = "android:clickable">true</item>
+     <item name = "android:layout_width">50dp</item>
+     <item name = "android:layout_height">wrap_content</item>
+     <item name = "android:layout_weight">1</item>
+      </style>   
+     
+    <!-- 设置界面 -->
+    <style name="Settingitem">
+       <item name = "android:layout_width">match_parent</item> 
+       <item name = "android:layout_height">80dp</item> 
+       <item name = "android:background">@drawable/home_entity_item</item> 
+       <item name = "android:onClick">doclick</item> 
+       <item name = "android:clickable">true</item> 
+       <item name = "android:padding">15dp</item> 
+       <item name = "android:gravity">center_vertical</item> 
+    </style>
+   
+    <!-- 设置界面文字 -->
+    <style name="SettingText">
+        <item name = "android:layout_width">wrap_content</item> 
+        <item name = "android:layout_height">wrap_content</item> 
+        <item name = "android:textColor">@color/black</item> 
+        <item name = "android:textStyle">bold</item> 
+        <item name = "android:textSize">25sp</item> 
+    </style>
+    
+    <!-- 设置界面开关 -->
+    <style name="SettingToggleButton">
+        <item name = "android:layout_width">wrap_content</item> 
+        <item name = "android:layout_height">wrap_content</item> 
+        <item name = "android:background">@drawable/setting_togglebutton_</item> 
+        <item name = "android:layout_alignParentRight">true</item> 
+    </style>
+    
+    
+    <!-- 设置界面图片 -->
+    <style name="SettingImageview">
+        <item name = "android:layout_width">wrap_content</item> 
+        <item name = "android:layout_height">wrap_content</item> 
+        <item name = "android:src">@drawable/tubiao</item> 
+        <item name = "android:layout_alignParentRight">true</item> 
+    </style>
+    
+     				                    
+      <!-- 文件管理界面的item 左边的文字 -->
+    	<style name="filemanager_type">
+    		<item name = "android:layout_width">wrap_content</item> 
+    		<item name = "android:layout_height">wrap_content</item> 
+    		<item name = "android:textColor">@color/black</item> 
+    		<item name = "android:textSize">20sp</item> 
+    		<item name = "android:layout_centerVertical">true</item> 
+    		<item name = "android:layout_marginLeft">10dp</item> 
+     </style>
+    
+   	<!-- 文件管理界面的item 最右边的图标 -->
+    <style name="filemanager_tubiao">
+    	<item name = "android:layout_width">wrap_content</item> 
+    	<item name = "android:layout_height">wrap_content</item> 
+    	<item name = "android:src">@drawable/tubiao</item> 
+    	<item name = "android:layout_alignParentRight">true</item> 
+    	<item name = "android:layout_marginRight">15dp</item> 
+     	<item name = "android:layout_centerVertical">true</item>
+     	<item name = "android:visibility">visible</item>
+     </style>
+     
+    	<!-- 文件管理界面的item 的进度条 -->
+    <style name="FilemanageProbar" parent="android:attr/progressBarStyleSmall">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:visibility">invisible</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>   
+</resources>

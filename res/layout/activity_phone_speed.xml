@@ -1,0 +1,130 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".PhoneSpeedActivity" 
+    android:padding="10dp">
+
+     <!-- 导航条 -->
+    <com.zc.contacts.view.ActionBar
+        android:id="@+id/actionbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <View 
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:background="@color/gainsboro"
+        />
+	
+    <!-- 手机的品牌 --> 
+    <TextView 
+        android:id="@+id/phonespeed_brand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_gravity="center"
+        />
+    <!-- 手机的版本号  -->
+    <TextView 
+        android:id="@+id/phonespeed_version "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+         android:layout_gravity="center"
+        />
+    <ProgressBar 
+        android:id="@+id/phonespeed_progressbar"
+        android:layout_width="match_parent"
+        android:layout_height="20dp" 
+        android:max="100"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:progressDrawable="@drawable/phonespeed_progressbar"
+        />
+	<!-- 手机的运存 -->
+    <TextView 
+        android:id="@+id/phonespeed_memory "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="13sp"
+         android:layout_gravity="right"
+         android:layout_marginTop="5dp"
+         android:layout_marginBottom="5dp"
+        />
+    <!-- 一键清理  -->
+    <Button 
+	    android:id="@+id/phonespeed_onechean"
+	    android:layout_width="match_parent"
+	    android:layout_height="40dp"
+	    android:text="一键清理 "
+	    android:textColor="@color/black"
+	    android:onClick="oneclean"
+	    android:background="@drawable/softwaremanage_listview_button"
+	    />
+    
+     <!-- 帧布局 -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+         >
+	
+        <!--  android:indeterminateOnly="true" ————表示圆形进度条没有值的，没有最大值
+        android:indeterminateDrawable="@drawable/software_progressbar_circle"——设置进度条动画
+         android:indeterminateBehavior="repeat" ——重复执行   前提是要加 android:indeterminateOnly="true" ————表示圆形进度条没有值的，没有最大值
+         android:indeterminateDuration="2000" ————进度条持续的时间-->
+        <ProgressBar
+            android:id="@+id/phonespeed_progressBar_cilcle"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:indeterminateOnly="true"
+            android:indeterminateDrawable="@drawable/software_progressbar_circle"
+            android:indeterminateBehavior="repeat"
+            android:indeterminateDuration="2000"
+            android:visibility="visible"
+            android:layout_gravity="center"
+            />
+	
+        <!-- 圆形进度条加载完后的Listview列表 -->
+        <ListView 
+        android:id="@+id/phonespeed_listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:cacheColorHint="@color/transparent"
+        android:visibility="invisible"
+        >
+        
+    </ListView>
+    </FrameLayout>
+    
+    
+    <!-- 多选框 与 显示进程 -->
+    <LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal"
+	    >
+
+	   <CheckBox  
+	       android:id="@+id/phonespeed_listview_checkAll"
+	       android:layout_width="wrap_content"
+	       android:layout_height="wrap_content"
+	       /> 
+	<Button 
+	    android:id="@+id/phonespeed_listview_showprogress"
+	    android:layout_width="match_parent"
+	    android:layout_height="30dp"
+	    android:text="只显示用户进程"
+	    android:textColor="@color/black"
+	    android:onClick="showcourse"
+	    android:background="@drawable/softwaremanage_listview_button"
+	    android:layout_marginRight="10dp"
+	    />
+	   
+	   
+	</LinearLayout>
+    
+</LinearLayout>

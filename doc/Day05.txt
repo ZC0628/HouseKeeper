@@ -1,0 +1,17 @@
+其他高级控件
+一. GridView			类似于桌面布局	如每行4个
+XML文件中特有的属性
+android:numColumns="5"				设置每行显示的item个数
+android:verticalSpacing="5dp"		垂直间隙
+android:horizontalSpacing="8dp"		水平间隙
+其他的用法都一样
+
+二. Gallery			画廊
+一个item只能显示一张图片,而且一般不会自定义子视图,而是在getView函数中创建ImageView对象
+现在Gallery已经过时,被ViewPager控件代替了
+
+三. 定义布局
+1. XML文件
+如果布局是静态的一般都会用XML文件来写
+2. 代码写
+如果要有动态的效果就必须用代码写,静态也可以用代码写

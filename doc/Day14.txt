@@ -1,0 +1,49 @@
+一. 绑定服务
+
+启动型服务
+服务可以在后台运行
+不能和Activity通讯
+生命周期
+oncreate
+onstartcommand
+ondestroy
+
+绑定型服务
+不能在后台运行
+可以和Activity通讯
+生命周期
+oncreate
+onbind
+onunbind
+ondestroy
+
+如何在Activity和Service之间进行通讯
+步骤
+1. 创建一个接口,在接口中声明要调用的函数
+2. 在Service中创建类继承于Binder并且实现接口,在实现方法中去调用service中的某个函数
+3. 在重写方法onbind中返回该类的对象
+4. 在onServiceConnected中会接收到Service传递过来的IBinder对象,通过这个对象调用service中的函数
+
+混合开启服务
+顺序一定要严格按照如下
+启动服务
+绑定服务
+调用服务中的函数
+解绑服务
+停止服务
+
+二. 自定义ActionBar
+步骤:
+1. 创建类继承于LinearLayout
+2. 添加构造函数public ActionBar(Context context, AttributeSet attrs) 
+该构造函数是用于xml文件的,当xml文件加载的时候就会自动调用这个构造函数
+3. 在构造函数中加载事先写好的子视图,并用View类中的inflate函数加载子视图
+inflate(context, R.layout.activity_home_actionbar, this);
+并找到里面的控件
+leftImageView = (ImageView) this.findViewById(R.id.left);
+middleTextView = (TextView) findViewById(R.id.middle);
+rightImageView = (ImageView) findViewById(R.id.right);
+4. 创建一个函数用于设置这些控件上的图片和文字
+public void initActionBar(int left,String text,int right)
+5. 在xml文件中定义ActionBar标签
+

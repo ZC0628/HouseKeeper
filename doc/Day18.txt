@@ -1,0 +1,75 @@
+一. 手机内存信息的获取
+1. 手机自带内存
+路径:
+File root = Environment.getRootDirectory();
+File data = Environment.getDataDirectory();
+File cache = Environment.getDownloadCacheDirectory();
+
+2. 内置SD卡内存
+路径:
+if(Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)){
+			return true;
+		}else{
+			ToastUtil.show(context, "内置SD卡没有找到", 0);
+			return false;
+		}
+File root = Environment.getExternalStorageDirectory();
+
+3. 外置SD卡内存
+路径:
+Map<String, String> map = System.getenv();
+		LogUtil.d("环境变量", map.toString());
+		//判断集合中是否包含外置的SD卡环境
+		if(map.containsKey("SECONDARY_STORAGE")){
+			String value = map.get("SECONDARY_STORAGE");
+			String path = value.split(":")[0];
+			return path;
+		}
+		return null;
+
+StatFs类可以获取路径所指向的文件夹的内存信息,包括总内存,有效内存,内存块个数,内存块大小等等
+StatFs rootState = new StatFs(root.getPath());
+获取可用的内存块个数
+rootState.getAvailableBlocks()
+获取内存块大小
+rootState.getBlockSize();
+获取所有内存块个数
+rootState.getBlockCount()
+
+二. 线程与Handler的配合使用
+由于安卓规定主线程不能5秒未响应,否则会抛出ANR(无响应)异常,所以耗时的操作只能
+在子线程中执行,但是安卓又规定子线程中不能更新UI,所以需要让子线程发送消息给Handler,
+Handler通知主线程去更新UI
+代码:
+private Handler handler = new Handler(){
+		/*
+		 * 为了能够处理消息,所以创建一个Handler的子类对象,去重写这个方法
+		 * 参数
+		 * android.os.Message msg就是一个消息对象
+		 * 该函数在UI线程中执行
+		 **/
+		public void handleMessage(android.os.Message msg) {
+			if(msg.what == 1){
+				//说明2秒睡眠时间到了,需要更新界面了
+				//安卓是不允许在子线程中更新UI(用户界面)
+				rotatePb.setVisibility(View.INVISIBLE);
+			}
+			
+		};
+	};
+	
+	new Thread(){
+			public void run() {
+				
+				try {
+					//让子线程睡眠2秒
+					Thread.sleep(2000);
+					//发送消息
+					handler.sendEmptyMessage(1);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+			};
+		}.start();

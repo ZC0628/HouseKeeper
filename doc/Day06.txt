@@ -1,0 +1,52 @@
+安卓管家
+
+一. 规定编码规范
+
+二. 创建项目
+1 biz-处理业务逻辑
+2 entity-实体类
+3 main-界面
+4 utils-常用的工具类
+
+三. 制作Logo界面
+动画
+1. 补间动画
+概念:你只需要将动画开始和结束状态传递给动画对象,那么当动画开始执行的时候,系统会将中间的部分补充上去
+1>透明度动画
+	android:fromAlpha="0"			开始透明度
+    android:toAlpha="1"				结束透明度 0-完全透明  1-不透明
+    android:duration="2500"			动画持续时间
+    android:repeatCount="3"			动画重复次数
+    android:fillAfter="true"		是否保存动画最后的状态,默认false
+    android:repeatMode="reverse"	动画重复时候的模式--1restart重新开始    2reverse-反转
+2>旋转动画
+3>缩放动画
+4>平移动画
+
+动画的写法
+1.XML写
+1>创建anim文件夹
+2>创建动画文件(XML)
+3>创建ImageView对象去调用函数加载动画
+2.代码写
+1>创建动画对应的对象,如(平移-TranslateAnimation,ScaleAnimation-缩放)
+2>将动画对象设置在控件上
+
+2. 帧动画
+概念:由多张图片组成,快速的连续播放的动画
+步骤
+1>新建文件夹drawable,新建XML(根标签-Animation-list),用于设置动画的顺序和每张图片的显示时间
+2>在要播放动画的控件上添加属性(src/background,如:src="@drawable/myanim_list")
+3>获取控件对象,如果是background则调用getBackground函数,返回一个Drawable对象,进行向下转型,转换成
+AnimationDrawable类型,调用该类中的函数start来启动动画
+
+3. android3.0版本之后出来的动画,属性动画(property-animation)
+属性动画和补间动画的区别:
+1. 可以制作一些非常复杂,比如,速度由快到慢
+2. 动画不但支持ImageView,而且其他控件也能使用
+3. 动画支持3D
+
+步骤:
+1>创建文件夹animator,定义XML文件
+2>创建Animator对象,调用setTarget函数去设置动画的目标并且调用start函数启动动画
+

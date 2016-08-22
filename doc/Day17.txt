@@ -1,0 +1,63 @@
+一. 自定义进度条
+第一种进度条
+<ProgressBar
+            android:id="@+id/softmgr_pb1"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:progressDrawable="@drawable/softmgr_progressbar1"
+            android:max="100"
+            android:progress="60"
+            android:layout_height="10dp" />
+            
+android:progressDrawable="@drawable/softmgr_progressbar1"属性指向进度条的背景图片
+是一个XML文件
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    <!-- 一个item表示一个层 -->
+    <item>
+        <shape>
+            <corners android:radius="5dp"/>
+            <solid android:color="#00ffff"/>
+        </shape>
+        
+    </item>
+    
+    <item>
+        <clip>
+        	<shape>
+            	<corners android:radius="5dp"/>
+            	<solid android:color="#0000ff"/>
+        	</shape>
+        </clip>
+    </item>
+
+</layer-list>
+
+第二种进度条
+<ProgressBar
+            android:id="@+id/progressBar1"
+            style="?android:attr/progressBarStyleLarge"
+            android:indeterminateOnly="true"
+            android:indeterminateDrawable="@drawable/softmgr_list_progressbar"
+            android:indeterminateBehavior="repeat"
+            android:indeterminateDuration="1000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="visible"
+             />
+android:indeterminateOnly="true"用于圆型的进度条  表示该进度条没有值
+android:indeterminateDrawable="@drawable/softmgr_list_progressbar" 设置进度条动画
+android:indeterminateBehavior="repeat" 表示重复旋转,前提要加android:indeterminateOnly="true"
+android:indeterminateDuration="1000"   表示进度条持续的时间
+
+softmgr_list_progressbar.xml文件
+<rotate xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:pivotX="50%"
+    android:pivotY="50%"
+    android:drawable="@drawable/ic_check_progress_bg"
+    />
+    
+二. FrameLayout布局
+是五大布局中的一种,一般用于经常替换的界面,可以使用Layout_gravity属性
+但是缺少相对布局中的相对性,帧布局的控件默认位置都是在左上角,所以位置比较难掌握,
+里面放的东西一般都很少

@@ -1,0 +1,22 @@
+一.发送通知
+Notification类和NotificationManager类
+Notification类用于创建通知和设置通知的属性
+需要设置的属性
+必须设置的属性:.setSmallIcon(R.drawable.ic_launcher)		设置小图标
+builder.setTicker("新通知")			设置通知栏上的标题
+builder.setContentTitle("我是一个通知")	设置拉开通知栏显示的标题
+builder.setContentText("大虾您的体力恢复了!")	通知的内容
+builder.setWhen(System.currentTimeMillis())	通知的显示时间
+builder.setVibrate(new long[]{10,60})//需要权限,震动
+builder.setContentIntent(pi)	设置通知点击事件
+builder.build()					创建通知,获得一个Notification对象	
+
+通知管理器类用于发送和取消
+NotificationManager notificationMgr = 
+				(NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+notificationMgr.notify(NOTIFICATION_ID,notification); 发送通知		
+notificationMgr.cancel(NOTIFICATION_ID);			  取消通知
+
+二. 如何区分是由哪个界面跳转倒过来的?
+可以通过使用Intent传递Bundle数据包的方式传递类名
+在另一个界面通过接收到的类名进行判断

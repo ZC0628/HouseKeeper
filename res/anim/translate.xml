@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  
+translate ———— 平移动画
+android:fromXDelta="0%"    从哪里开始到哪里结束
+android:toXDelta="300%"    0%——自身左上角的坐标          100%——自身右上角X轴的坐标
+android:fromYDelta="0%"
+android:toYDelta="0%
+旋转时的特效
+android:interpolator="@android:anim/anticipate_overshoot_interpolator"    移动前先往后移动点
+
+-->
+<translate
+android:duration="2000"
+android:repeatCount="3"
+android:repeatMode="restart"  
+android:fillAfter="true"    
+android:fromXDelta="0%"    
+android:toXDelta="300%"
+android:fromYDelta="0%"
+android:toYDelta="0%"
+android:interpolator="@android:anim/anticipate_overshoot_interpolator"
+    xmlns:android="http://schemas.android.com/apk/res/android"/>
+    
+

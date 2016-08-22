@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+scale —————— 缩放动画   	根据X轴和Y轴的比例
+ android:fromXScale="1"  X轴从1倍到3倍
+ android:toXScale="3"
+ android:fromYScale="1"  Y轴从1倍到2倍
+ android:toYScale="2"
+ android:pivotX=""    锚点    X轴从左到右     0%   100%
+ android:pivotY=""
+
+
+
+  -->
+
+<scale
+ android:duration="2000"
+ android:repeatCount="3"
+ android:repeatMode="restart"  
+ android:fromXScale="1"
+ android:toXScale="3"
+ android:fromYScale="1"
+ android:toYScale="2"
+ android:pivotX="50%"
+ android:pivotY="50%"
+    
+xmlns:android="http://schemas.android.com/apk/res/android"/>
+    
+
+

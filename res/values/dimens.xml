@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 通讯录中的所有尺寸 -->
+<resources>
+
+    <!-- activity_telephone.xml -->
+    <dimen name="telephone_textsize">27sp</dimen>
+    <dimen name="telephone_height">180dp</dimen>
+
+    <!-- activity_telephone_item -->
+    <dimen name="telephone_item_Imageview_width">40dp</dimen>
+    <dimen name="telephone_item_Imageview_height">40dp</dimen>
+    <dimen name="telephone_listview_item_textsize">24sp</dimen>
+    <dimen name="telephone_listview_item_marginleft">18dp</dimen>
+    <dimen name="telephone_listview_item_marginright">3dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="telephone_item_layout_margin">15dp</dimen>
+    
+    <dimen name="lead_imageview_with">20dp</dimen>
+    <dimen name="lead_imageview_height">20dp</dimen>
+    
+	
+</resources>

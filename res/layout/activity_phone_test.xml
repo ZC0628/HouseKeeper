@@ -1,0 +1,99 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PhoneTestActivity" 
+    android:orientation="vertical">
+	
+    <!-- 导航条 -->
+    <com.zc.contacts.view.ActionBar
+        android:id="@+id/actionbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    
+    <View 
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:background="@color/gainsboro"
+        />
+	
+    <!-- 手机电池信息 -->
+    <LinearLayout 
+        android:id="@+id/showbattery"
+        android:layout_width="match_parent"
+		android:layout_height="180dp"        
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:onClick="showbattery"
+        android:clickable="true"
+        android:layout_marginBottom="10dp">
+        
+        <ProgressBar
+            android:id="@+id/phonetest_progressbar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:progressDrawable="@drawable/phonetest_progressbar"
+            android:max="100"
+            android:progress="50"
+            android:layout_width="240dp"
+            android:layout_height="120dp"
+            />
+        <ProgressBar
+            android:id="@+id/phonetest_progressbar2" 
+            style="?android:attr/progressBarStyleHorizontal"
+            android:progressDrawable="@drawable/phonetest_progressbar"
+            android:layout_width="20dp"
+            android:layout_height="70dp"
+            android:background="@drawable/phonetest_battery_left_shape"
+            />
+        <TextView 
+            android:id="@+id/phonetest_battery_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0%"
+            android:textColor="@color/royalblue"
+            android:layout_marginLeft="5dp"
+            android:textSize="20sp"
+            android:background="@drawable/home_entity_item"/>
+    </LinearLayout>
+    
+    
+    <!-- 帧布局 -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginTop="30dp">
+   	
+        <!--  android:indeterminateOnly="true" ————表示圆形进度条没有值的，没有最大值
+        android:indeterminateDrawable="@drawable/software_progressbar_circle"——设置进度条动画
+         android:indeterminateBehavior="repeat" ——重复执行   前提是要加 android:indeterminateOnly="true" ————表示圆形进度条没有值的，没有最大值
+         android:indeterminateDuration="2000" ————进度条持续的时间-->
+        <ProgressBar
+            android:id="@+id/phonetest_progressBar_cilcle"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:indeterminateOnly="true"
+            android:indeterminateDrawable="@drawable/software_progressbar_circle"
+            android:indeterminateBehavior="repeat"
+            android:indeterminateDuration="2000"
+            android:visibility="visible"
+            android:layout_gravity="center"
+            />
+        
+     <!-- 圆形进度条加载完后的Listview列表 -->   
+    <!-- 手机电池下的列表 -->
+    <ListView 
+        android:id="@+id/phonetest_listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"    
+        android:cacheColorHint="@color/transparent"
+        android:layout_weight="1"
+        android:visibility="invisible"
+     >
+    </ListView>
+ </FrameLayout>   
+        
+</LinearLayout>

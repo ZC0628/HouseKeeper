@@ -1,0 +1,118 @@
+	一.安卓的历史以及手机的各种版本
+	版本最低	Android内部测试版->Android1.0-API1...Android2.3-API10...Android4.2-API17
+	最高		Android6.0->API23
+
+	二.搭建android的环境
+	1.配置JDK
+	2.配置SDK(android的开发系统库-函数库)
+	SDK随着手机版本的升级,SDK系统库也会随之升级
+	Window->preferences->Android->SDK Location
+	3.配置ADT(android的开发工具-更新SDK)
+	下载后是一个zip,Help->Install new software->add
+	
+	三.创建安卓工程以及工程下的结构
+	1. new -> Android Application Project
+	应用程序的名称:安装在手机上的名称
+	工程的名称:eclipse中项目列表上的名称
+	包名:工程的包名
+	
+	2.结构
+	1>src-源代码
+	2>gen(GENERATED)-里面R文件,存放的是项目中的资源清单,不要去修改
+	3>bin(binarry)-存放的是被编译后的二进制文件
+	4>assets-存放的是不会被编译的原始文件
+	5>res(resouce)-项目中所有的资源存放位置
+	  drawable-图片/XML文件
+	  drawable有5个文件夹是因为安卓手机屏幕有大有小,为了能够适配安卓的各款手机,所以准备了5个不同分辨率
+	  的文件夹,当程序运行的时候只会去加载对应分辨率文件夹中的图片
+	  layout-存放界面的布局文件的文件夹,如果要制作布局可以用xml文件
+	  values-存放文字(strings.xml)/样式(styles.xml)/颜色(colors.xml)/尺寸(dimens.xml)
+	  values文件夹也有多个,这是为了做语言国际化的,如values-zh,values-en
+	6>AndroidMenifest.xml是项目中的清单文件,里面记载了项目的包名/版本号/版本名称/所使用的SDK版本/
+	应用程序信息/界面信息  
+	 
+	四.XML文件
+	全部都是由标签组成的
+	作用:用来显示手机界面布局的(主要)
+	标签:
+	1.开始结束标签		<Class>    </Class>
+	2.开闭标签			<Class/>
+	标签的属性
+	<Class
+		name="class04"
+		number="20"
+	>    
+	
+	</Class>
+	
+	<Class
+		name="class04"
+		number="20"
+	/>
+	
+	xml文件标签的表示方式
+	<Class
+		name="1603"
+		number="20"
+	>
+		<Student
+			name="邓凯"
+			age="21"
+			sex="男"
+		/>
+		
+		<Student
+			name="李亮"
+			age="22"
+			sex="男"
+		/>
+	</Class>
+	一般如果标签内部还有其他标签那么使用开始-结束标签,如果内部没有其他标签,则使用开闭标签
+	
+	五.常用的标签以及属性
+	最外层的标签指的是安卓手机界面的布局方式
+	安卓中有5种布局方式
+	1.LinearLayout		线性布局
+	2.RelativeLayout	相对布局
+	3.AbsoluteLayout	绝对布局
+	4.TableLayout		桌面布局
+	5.FrameLayout		帧布局
+	
+	LinearLayout
+	
+	专用属性:android:orientation="vertical"		方向  vertical垂直
+		   android:layout_weight="1"			权重的分配
+	
+	TextView		表示文字控件
+	常用属性:
+	android:text="我是一个文字"		文字内容
+	android:textColor="#ff00ff00"	文字颜色  ARGB
+	android:textSize="30sp"		文字尺寸,单位sp
+	
+	ImageView		表示图片
+	常用属性:
+	android:src="@drawable/ic_launcher"		指定图片的来源		@表示引用
+	android:scaleType="fitCenter"			缩放图片		fitXY将图片的宽高填充整个控件
+	
+	Button			表示按钮
+	常用属性:
+	text		文字
+	textcolor	文字颜色
+	textsize	文字尺寸
+	android:background="@drawable/ic_launcher"	添加背景颜色或者图片
+	
+	EditText		表示输入框
+	android:singleLine="true"	单行输入框,不能换行
+	android:maxLength="5"		限制输入的字符个数
+	android:inputType="number"	输入类型(数字/英文字母/手机号码等)
+	android:hint="请输入数字"		输入框中的水印
+	
+	宽和高是所有标签必须具备的属性
+	android:layout_width="match_parent"  宽
+	android:layout_height="match_parent" 高
+	match_parent:让宽或者高填充整个父控件
+	wrap_content:自适应-内容有多宽多高,那么就占用多大的位置
+	
+	单位
+	px,mm,in,dp,sp
+	开发中常用单位dp和sp,sp用于文字的尺寸,其他都用dp,因为sp和dp会根据手机屏幕大小进行相应的大小调整

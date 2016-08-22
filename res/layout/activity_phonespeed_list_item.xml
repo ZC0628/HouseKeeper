@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:padding="10dp">
+	
+    <!-- 多选框 
+    android:checked="false" ——默认没有选中
+    -->
+    <CheckBox 
+        android:id="@+id/phonespeed_listview_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:layout_centerVertical="true"
+        android:button="@drawable/softwaremanage_listview_checkbox"
+        />
+    <!-- 应用程序的图标 -->
+    <ImageView 
+        android:id="@+id/phonespeed_listview_AppPicture"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:scaleType="fitXY"
+        android:layout_toRightOf="@id/phonespeed_listview_checkbox"
+        android:layout_marginLeft="15dp"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/housekeeper"
+        />
+    <!-- 应用程序的名称 -->
+	<TextView 
+	     android:id="@+id/phonespeed_listview_AppName"
+	    android:layout_width="80dp"
+	    android:layout_height="20dp"
+	    android:textSize="15sp"
+	    android:textStyle="bold"
+	    android:layout_toRightOf="@id/phonespeed_listview_AppPicture"
+	    android:layout_alignTop="@id/phonespeed_listview_AppPicture"
+	    android:text="所有软件"
+	    />  
+	     <!-- 应用程序的内存-->  
+    <TextView 
+	    android:id="@+id/phonespeed_listview_Appmemory"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:textSize="13sp"
+	    android:layout_toRightOf="@id/phonespeed_listview_AppPicture"
+	    android:layout_alignBottom="@id/phonespeed_listview_AppPicture"
+	    android:text="内存：  "
+	    android:layout_marginTop="5dp"
+	    />    
+	   <!-- 是否是系统进程 -->   
+    <TextView 
+	     android:id="@+id/phonespeed_listview_isSystem"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:textSize="15sp"
+	    android:layout_alignParentRight="true"
+	    android:layout_alignTop="@id/phonespeed_listview_AppPicture"
+	    android:text="1.0"
+	    android:textColor="@color/red"
+	    android:visibility="invisible"
+	    /> 
+    
+
+</RelativeLayout>

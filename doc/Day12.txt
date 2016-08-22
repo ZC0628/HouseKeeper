@@ -1,0 +1,29 @@
+一. ViewPager的使用
+ViewPager控件是安卓3.0之后出现的新控件,已经将老的
+Gallery替换掉了,因为ViewPager效率更高,而且可以搭配
+fragment一起使用
+
+使用的适配器PagerAdapter
+重写四个方法
+getCount--item的个数
+isViewFromObject--官方提供的写法arg0==arg1(详细参考网上)
+instantiateItem--当item移动入视图组的时候会调用
+destroyItem--将item从视图组中移走的时候调用
+
+
+ViewPager的监听器
+addOnPagerChangedListner
+重写三个函数
+//当页面切换的时候调用
+public void onPageSelected(int position) {}
+			
+//当页面正在滚动的时候会多次调用
+public void onPageScrolled(int arg0, float arg1, int arg2) {}
+
+//当滚动状态切换的时候调用(向左和向右)
+public void onPageScrollStateChanged(int position) {}
+
+二. 如何判断一个应用程序是否是第一次打开
+一般第一次打开一个APP我们会用简单编辑器往文件中写入一个数值,表示已经登录过了
+那么第二次打开的时候首先去文件中寻找这个值,如果有这个值说明已经登录过了,如果
+没有找到说明是第一次登录的

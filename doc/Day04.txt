@@ -1,0 +1,49 @@
+一. ListView				GridView  父类	ViewGroup
+ListView需要了解的四个要素
+1>主视图
+2>子视图
+3>数据源
+4>适配器
+
+适配器
+1>ArrayAdapter
+特点:只能展示一行文字
+流程:
+1.创建主视图
+2.创建数据
+3.创建适配器(使用android自带的子视图)
+4.配置适配器
+
+
+2>SimpleAdapter
+特点:可以展示复杂视图,但是灵活性不高,所以在开发过程中使用频率也不是很高
+流程:
+1. 创建主视图
+2. 创建子视图
+3. 创建数据源(必须是一个List<Map<String,Object>>类型的集合)
+4. 创建SimpleAdapter适配器
+5. 配置适配器
+
+3>自定义适配器
+方式:继承BaseAdapter(抽象类)
+四个重写方法
+getCount--返回列表的长度
+getView--每次加载一个条目(item)的时候都会被调用,会返回一个View,这个View就用当前加载的item的视图
+		将子布局先转换成View对象,从View对象中找到要使用的控件对象,再将要显示的数据放在对应的控件上
+		
+注意:列表ListView如果没有进行优化,那么是存在卡顿现象的
+ListView的优化
+步骤:
+1. 使用getView函数中自带的参数convertView,启用android的视图重用机制
+视图重用机制:当用户将列表往上拖动的时候,那么android系统会将移除屏幕的View放入缓存池中,
+在移除一个View的同时,下方也会进入一个View,那么就可以将缓存池中的View放入下方进行重用
+
+2. LayoutInflate	布局加载器
+调用布局加载器的inflate函数可以将一个布局转换成View对象,但是这个函数消耗的性能比较大
+包括经常用到的函数findViewById,消耗的性能也较大,而且getView函数本身调用的频率也很高,
+那么这两个函数调用的次数就更多,相应的效率就大大降低,为了解决这个问题,我们通过在getView函数
+中对convertView是否为空的判断,来减少这两个函数的调用次数
+
+3. 如果convertView添加了==null的判断,那么发现convertView中的控件对象在if语句外无法访问
+我们可以将这些控件统一的放在一个类中,当convertView为空的时候去创建这个类的对象,并且将对象与convertView
+视图绑定在一起

@@ -1,0 +1,25 @@
+<!-- 
+ 	 android:dividerHeight="8dp"	8dp的分隔线
+	 android:divider="#00000000"   没有分隔线
+	  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TelephoneActivity" 
+    android:orientation="vertical"
+    >
+   
+    <TextView
+       style="@style/telephone_textview"
+       android:text="@string/title_telephone"
+         />
+	<ListView
+	    android:id="@+id/lst_telephone"
+	    style="@style/telephone_listview"
+	    android:paddingBottom="10dp"
+	   
+	    />
+
+</LinearLayout>

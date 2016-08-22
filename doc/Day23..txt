@@ -1,0 +1,91 @@
+一.自定义控件
+1.组合控件
+类似于我们制作的ActionBar,是由多个控件组合成一个控件
+
+2.扩展控件
+一般是自己创建一个类去继承于安卓中自带的控件类,在其本身源代码的基础上进行相应的添加
+或者修改,制作成属于自己的一个新控件
+
+3.自定义控件
+自己创建一个类继承于所有控件的父类View
+
+构造函数
+1.用于代码创建对象的构造函数
+public MyBall(Context context) {
+		super(context);
+		// TODO Auto-generated constructor stub
+	}
+
+2.用于xml文件的构造函数
+public MyBall(Context context, AttributeSet attrs) {
+		super(context, attrs);
+		// TODO Auto-generated constructor stub
+	}
+
+经常重写的方法:
+1.protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec)
+该函数用于测量和设置控件的宽高
+int width = MeasureSpec.getSize(widthMeasureSpec);
+int height = MeasureSpec.getSize(heightMeasureSpec);
+setMeasuredDimension最后必须调用,否则报错
+setMeasuredDimension(width, height);
+
+2.onDraw(Canvas canvas)
+该函数用于在控件范围内进行绘制工作,通过调用
+invalidate()函数或者postInvalidate()函数可以重新调用onDraw函数
+
+3.onTouchEvent(MotionEvent event)
+当手机在控件上触摸的时候会不停的调用,一般在该函数中可以获取到触摸的坐标点
+public boolean onTouchEvent(MotionEvent event) {
+		//获取触摸坐标
+		x = event.getX();
+		y = event.getY();
+		Log.i("onTouchEvent", x+","+y);
+		//通知重新绘制
+		invalidate();
+		return true;
+}
+
+Canvas类表示画布
+可以画各种图形和线条以及文字
+//画文字
+		canvas.drawText("马总", 10, 10, p);
+		
+		//画长方形
+		canvas.drawRect(10, 40, 30, 50, p);
+		
+		//创建一个矩形对象
+		RectF rect = new RectF(10, 80, 60, 110);
+		canvas.drawRect(rect, p);
+		
+		
+		//画图片
+		Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher);
+		canvas.drawBitmap(bitmap, 10, 120, p);
+		
+		//画圆
+		canvas.drawCircle(80, 200,20, p);
+		
+		RectF rectf = new RectF(20,230,80,280);
+		canvas.drawArc(rectf, 0, 80, false, p);
+		
+		
+		//画路径
+		Path path = new Path();
+		path.moveTo(20,330);
+		path.lineTo(40, 350);
+		path.lineTo(60, 330);
+		canvas.drawPath(path, p);
+		
+		//画线
+//		canvas.drawLine(startX, startY, stopX, stopY, paint);
+
+
+Paint类表示画笔
+可以设置绘画的颜色,笔尖大小,透明度,测量文字尺寸等等
+p = new Paint();
+p.setColor(Color.RED);//颜色
+p.setTextSize(20);//文字大小
+p.setStrokeWidth(2);//设置笔尖宽度
+p.setStyle(Style.STROKE);//空心
+p.measureText("hehe");//测量文字宽度

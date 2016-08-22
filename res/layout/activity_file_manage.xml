@@ -1,0 +1,346 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FileManageActivity"
+    android:orientation="vertical" >
+
+    <!-- 导航条 -->
+    <com.zc.contacts.view.ActionBar
+        android:id="@+id/actionbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <View 
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:background="@color/gainsboro"
+        />
+    
+    <!-- 蓝色背景 -->
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@color/royalblue"
+        android:gravity="center">
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="已发现   "
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            />
+        <TextView 
+            android:id="@+id/filemanager_allsize "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="200.55MB"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            />
+    </LinearLayout>
+    
+    
+    <ScrollView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+        
+        <FrameLayout 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            
+            <LinearLayout 
+            android:id="@+id/filemanage_linearout"    
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+            <RelativeLayout 
+                android:id="@+id/filemanage_linearout_all"
+                android:clickable="true"
+                android:background="@drawable/home_entity_item"
+                android:onClick="goNextActivity"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                >
+                <!-- 文件的类型 -->
+                <TextView 
+                    android:id="@+id/filemanager_type"
+                    android:text="全部"
+                    style="@style/filemanager_type"
+                    />
+                <!-- 文件的大小 -->
+                <TextView 
+                    android:id="@+id/filemanager_size1"
+                    android:text="190MB"
+                    style="@style/filemanager_type"
+                    android:textSize="13sp"
+                    android:layout_toRightOf="@id/filemanager_type"
+                    android:layout_marginLeft="30dp"
+                    android:layout_alignBottom="@id/filemanager_type"/>
+                <!-- 最右边的图片 -->
+                <ImageView 
+                    android:id="@+id/filemanage_bubiao1"
+                   style="@style/filemanager_tubiao"
+                   />
+                <ProgressBar 
+                    android:id="@+id/filemanage_allProbar"
+                    style="@style/FilemanageProbar"
+                    />
+            </RelativeLayout>
+            <!-- 分割线 -->
+            <View 
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+				android:background="@color/gainsboro"                
+                />
+            
+            <!-- 第二行 -->
+            <RelativeLayout
+                android:id="@+id/filemanage_linearout_text"
+                android:clickable="true"
+                android:background="@drawable/home_entity_item"
+                android:onClick="goNextActivity" 
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                >
+                <!-- 文件的类型 -->
+                <TextView 
+                    android:id="@+id/filemanager_type2"
+                    android:text="文档"
+                    style="@style/filemanager_type"
+                    />
+                <!-- 文件的大小 -->
+                <TextView 
+                    android:id="@+id/filemanager_size2"
+                    android:text="190MB"
+                    style="@style/filemanager_type"
+                    android:textSize="13sp"
+                    android:layout_toRightOf="@id/filemanager_type2"
+                    android:layout_marginLeft="30dp"
+                    android:layout_alignBottom="@id/filemanager_type2"/>
+                <!-- 最右边的图片 -->
+                <ImageView 
+                    android:id="@+id/filemanage_bubiao2"
+                   style="@style/filemanager_tubiao"/>
+                <ProgressBar 
+                    android:id="@+id/filemanage_textProbar"
+                    style="@style/FilemanageProbar"
+                    />
+            </RelativeLayout>
+            <!-- 分割线 -->
+            <View 
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+				android:background="@color/gainsboro"                
+                />
+            
+            <!-- 第三行 -->
+            <RelativeLayout 
+                android:id="@+id/filemanage_linearout_video"
+                android:clickable="true"
+                android:background="@drawable/home_entity_item"
+                android:onClick="goNextActivity"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                >
+                <!-- 文件的类型 -->
+                <TextView 
+                    android:id="@+id/filemanager_type3"
+                    android:text="视频"
+                    style="@style/filemanager_type"
+                    />
+                <!-- 文件的大小 -->
+                <TextView 
+                    android:id="@+id/filemanager_size3"
+                    android:text="190MB"
+                    style="@style/filemanager_type"
+                    android:textSize="13sp"
+                    android:layout_toRightOf="@id/filemanager_type3"
+                    android:layout_marginLeft="30dp"
+                    android:layout_alignBottom="@id/filemanager_type3"/>
+                <!-- 最右边的图片 -->
+                <ImageView 
+                    android:id="@+id/filemanage_bubiao3"
+                   style="@style/filemanager_tubiao"/>
+                <ProgressBar 
+                    android:id="@+id/filemanage_videoProbar"
+                    style="@style/FilemanageProbar"
+                    />
+            </RelativeLayout>
+            <!-- 分割线 -->
+            <View 
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+				android:background="@color/gainsboro"                
+                />
+            
+             <!-- 第四行 -->
+            <RelativeLayout 
+                android:id="@+id/filemanage_linearout_Audio"
+                android:clickable="true"
+                android:background="@drawable/home_entity_item"
+                android:onClick="goNextActivity"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                >
+                <!-- 文件的类型 -->
+                <TextView 
+                    android:id="@+id/filemanager_type4"
+                    android:text="音频"
+                    style="@style/filemanager_type"
+                    />
+                <!-- 文件的大小 -->
+                <TextView 
+                    android:id="@+id/filemanager_size4"
+                    android:text="190MB"
+                    style="@style/filemanager_type"
+                    android:textSize="13sp"
+                    android:layout_toRightOf="@id/filemanager_type4"
+                    android:layout_marginLeft="30dp"
+                    android:layout_alignBottom="@id/filemanager_type4"/>
+                <!-- 最右边的图片 -->
+                <ImageView 
+                    android:id="@+id/filemanage_bubiao4"
+                   style="@style/filemanager_tubiao"/>
+                <ProgressBar 
+                    android:id="@+id/filemanage_audioProbar"
+                    style="@style/FilemanageProbar"
+                    />
+            </RelativeLayout>
+            <!-- 分割线 -->
+            <View 
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+				android:background="@color/gainsboro"                
+                />
+            
+            <!-- 第五行 -->
+            <RelativeLayout 
+                android:id="@+id/filemanage_linearout_Image"
+                android:clickable="true"
+                android:background="@drawable/home_entity_item"
+                android:onClick="goNextActivity"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                >
+                <!-- 文件的类型 -->
+                <TextView 
+                    android:id="@+id/filemanager_type5"
+                    android:text="图像"
+                    style="@style/filemanager_type"
+                    />
+                <!-- 文件的大小 -->
+                <TextView 
+                    android:id="@+id/filemanager_size5"
+                    android:text="190MB"
+                    style="@style/filemanager_type"
+                    android:textSize="13sp"
+                    android:layout_toRightOf="@id/filemanager_type5"
+                    android:layout_marginLeft="30dp"
+                    android:layout_alignBottom="@id/filemanager_type5"/>
+                <!-- 最右边的图片 -->
+                <ImageView 
+                    android:id="@+id/filemanage_bubiao5"
+                   style="@style/filemanager_tubiao"/>
+                <ProgressBar 
+                    android:id="@+id/filemanage_imageProbar"
+                    style="@style/FilemanageProbar"
+                    />
+            </RelativeLayout>
+            <!-- 分割线 -->
+            <View 
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+				android:background="@color/gainsboro"                
+                />
+            
+            <!-- 第六行 -->
+            <RelativeLayout 
+                android:id="@+id/filemanage_linearout_Zip"
+                android:clickable="true"
+                android:background="@drawable/home_entity_item"
+                android:onClick="goNextActivity"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                >
+                <!-- 文件的类型 -->
+                <TextView 
+                    android:id="@+id/filemanager_type6"
+                    android:text="压缩包"
+                    style="@style/filemanager_type"
+                    />
+                <!-- 文件的大小 -->
+                <TextView 
+                    android:id="@+id/filemanager_size6"
+                    android:text="190MB"
+                    style="@style/filemanager_type"
+                    android:textSize="13sp"
+                    android:layout_toRightOf="@id/filemanager_type6"
+                    android:layout_marginLeft="30dp"
+                    android:layout_alignBottom="@id/filemanager_type6"/>
+                <!-- 最右边的图片 -->
+                <ImageView 
+                    android:id="@+id/filemanage_bubiao6"
+                   style="@style/filemanager_tubiao"/>
+                <ProgressBar 
+                    android:id="@+id/filemanage_zipProbar"
+                    style="@style/FilemanageProbar"
+                    />
+            </RelativeLayout>
+            <!-- 分割线 -->
+            <View 
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+				android:background="@color/gainsboro"                
+                />
+            
+            <!-- 第七行 -->
+            <RelativeLayout 
+                android:id="@+id/filemanage_linearout_Apk"
+                android:clickable="true"
+                android:background="@drawable/home_entity_item"
+                android:onClick="goNextActivity"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                >
+                <!-- 文件的类型 -->
+                <TextView 
+                    android:id="@+id/filemanager_type7"
+                    android:text="程序包"
+                    style="@style/filemanager_type"
+                    />
+                <!-- 文件的大小 -->
+                <TextView 
+                    android:id="@+id/filemanager_size7"
+                    android:text="190MB"
+                    style="@style/filemanager_type"
+                    android:textSize="13sp"
+                    android:layout_toRightOf="@id/filemanager_type7"
+                    android:layout_marginLeft="30dp"
+                    android:layout_alignBottom="@id/filemanager_type7"/>
+                <!-- 最右边的图片 -->
+                <ImageView 
+                    android:id="@+id/filemanage_bubiao7"
+                   style="@style/filemanager_tubiao"/>
+                <ProgressBar 
+                    android:id="@+id/filemanage_apkProbar"
+                    style="@style/FilemanageProbar"
+                    />
+            </RelativeLayout>
+            <!-- 分割线 -->
+            <View 
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+				android:background="@color/gainsboro"                
+                />
+        </LinearLayout>
+            
+    </FrameLayout>
+        
+        
+        
+     </ScrollView>
+</LinearLayout>

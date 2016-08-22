@@ -1,0 +1,19 @@
+一.获取应用程序信息
+PackageManager 包管理器
+context.getPackageManager();
+
+获取所有安装的应用程序,包括系统的和用户
+List<PackageInfo> packageInfos = pm
+		.getInstalledPackages(PackageManager.GET_ACTIVITIES
+		| PackageManager.GET_UNINSTALLED_PACKAGES);
+
+
+判断是否是系统应用	
+系统的
+if ((packageInfo.applicationInfo.flags 
+    & ApplicationInfo.FLAG_SYSTEM) != 0) {
+	sysPackageInfos.add(info);
+}else{用户的
+	userPackageInfos.add(info);
+}
+

@@ -1,0 +1,39 @@
+常用属性以及函数	
+EditText	android:digits="+-*/"	限制输入框中输入的内容
+			setText(String str)		设置文字
+			
+View		setVisibity(int i)		设置显示状态
+
+ImageView	setImageResource(int resId)	设置要显示的图片
+
+
+一.界面和界面之间的跳转
+1.Intent类     android.content包
+1>显式意图
+	明确指定要跳转的类
+	Intent it = new Intent(this,TwoActivity.class);
+2>隐式意图
+	只指定要执行的行为action
+	Intent it = new Intent(Intent.ACTION_CALL);
+	it.setData(Uri.parse("tel:123423424"));
+
+Intent还可以传递数据,一般传递一些基本类型或者数组,如果是对象必须序列化后再传递,但是是不推荐的
+Intent可以返回数据到某个界面
+startActivity(Intent it)和startActivityForResult(Intent it,int request)的区别
+前者只能从A界面跳转到B界面的时候传递数据,后者可以当B界面返回A界面的时候返回数据
+如果要获取返回的数据则需要在A界面调用startActivityForResult(Intent it,int request)进行跳转
+然后重写onActivityResult方法来处理返回的数据
+并且在B界面中调用setResult方法来设置要返回的数据以及返回码
+
+二. Activity的生命周期
+onCreate		界面的创建
+onStart			界面启动
+onResume		界面可见--眼睛能看见了
+onPause			暂停
+onStop			停止
+onDestroy		销毁
+onRestart		重启
+
+
+
+

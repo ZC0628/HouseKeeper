@@ -1,0 +1,33 @@
+一. 对话框注意事项
+如果自定义视图对话框使用的setView函数中放的参数是View
+那么必须将布局文件转换成View对象,这时候经常会出现一个异常
+非法状态异常--将视图重复加载到对话框上的时候会出现
+解决方法:
+1需要每次点击按钮的时候都加载一次视图,这样每次都会有一个
+新的视图对象,就不会重复加载了
+2升级SDK以及ADT到5.0,调用新出现的函数setView(int resId)
+
+二. 监听设备上的按键
+除了Home键,其他的按键基本都可以用onkeydown重写函数来监听
+重写onBackpressed函数专门监听back键
+
+三. 重构项目
+1.重构项目的包名
+
+1>edu.feicui.contacts1603.activity	所有界面存放的包
+2>edu.feicui.contacts1603.adapter	所有适配器存放的包
+3>edu.feicui.contacts1603.biz		所有用于处理业务逻辑的类
+4>edu.feicui.contacts1603.entity	所有的实体类
+5>edu.feicui.contacts1603.junit		测试包
+6>edu.feicui.contacts1603.base.activity	activity的父类
+7>edu.feicui.contacts1603.base.adapter	adatper的父类
+8>edu.feicui.contacts1603.base.utils	所有的工具类
+
+2. 抽取Activity和Adapter的父类
+1>BaseActivity类
+包含startActivity的重载函数,可以跳转时携带数据以及动画效果
+
+2>BaseBaseAdapter
+父类中提供数据的泛型以及添加数据/获取数据的函数给子类使用
+
+3>DialogUtils

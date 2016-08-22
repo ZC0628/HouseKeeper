@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 通讯录中的所有颜色 -->
+<resources>
+    <color name = "slateblue">#6A5ACD</color><!--石绿色 -->
+    <color name = "white">#fff</color>
+    <color name = "black">#000</color>
+    <color name = "transparent">#00000000</color><!--透明的 --> 
+    <color name="gainsboro">#dcdcdc</color><!--淡灰色 --> 
+    <color name="red">#CC0000</color>
+    <color name="turquoise">#aa40E0D0</color><!--蓝绿色 --> 
+    <color name="turquoise_normal">#40E0D0</color><!--蓝绿色 --> 
+    
+    <color name="saddlebrown">#aa8B4513</color><!--重褐色 --> 
+    <color name="saddlebrown_normal">#8B4513</color><!--重褐色 --> 
+    <color name="royalblue">#4169E1</color><!--品绿色 --> 
+    <color name="blue">#ff0000ff</color><!--蓝色 --> 
+    <color name="cyan">#ff00ffff</color><!--蓝绿色 --> 
+    
+    
+</resources>

@@ -1,0 +1,28 @@
+一. Build类
+用于获取手机的品牌/机型/版本号等...
+1. Build.BOARD // 主板     
+2. Build.BRAND // android系统定制商   
+3. Build.CPU_ABI // cpu指令集    
+4. Build.DEVICE // 设备参数    
+5. Build.DISPLAY // 显示屏参数    
+6. Build.FINGERPRINT // 硬件名称    
+7. Build.HOST     
+8. Build.ID // 修订版本列表     
+9. Build.MANUFACTURER // 硬件制造商    
+10. Build.MODEL // 版本     
+11. Build.PRODUCT // 手机制造商    
+12. Build.TAGS // 描述build的标签    
+13. Build.TIME     
+14. Build.TYPE // builder类型    
+15. Build.USER
+
+二. 获取手机运行时内存
+1. 获取最大运存
+通过读取proc/meminfo文件下的MemTotal字段的值,需要使用IO流
+2. 获取空闲运存
+ActivityManager中的函数getMemoryInfo(MemoryInfo info)
+
+三. 如何获取正在运行的应用程序信息
+需要使用到PackageManager和ActivityManager
+PackageManger能获取到应用程序的信息,包括应用程序的名称,版本号等
+ActivityManager能获取到应用程序的内存信息

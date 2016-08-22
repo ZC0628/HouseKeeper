@@ -1,0 +1,112 @@
+一. 各种管理器的使用
+android中大多数的管理器获取方式都是通过getSystemService函数来获取的
+WINDOW_SERVICE 						WindowManager 管理打开的窗口程序
+LAYOUT_INFLATER_SERVICE 			LayoutInflater 取得xml里定义的view
+ACTIVITY_SERVICE 					ActivityManager 管理应用程序的系统状态
+CONNECTIVITY_SERVICE 				Connectivity 网络连接的服务
+TELEPHONY_SERVICE 					TeleponyManager 电话服务
+WIFI_SERVICE 						WifiManager Wi-Fi服务
+POWER_SERVICE 						PowerManger 电源的服务
+ALARM_SERVICE 						AlarmManager 闹钟的服务
+LOCATION_SERVICE 					LocationManager 位置的服务，如GPS
+
+1. TelephonyManager
+主要提供了一系列用于访问不手机通讯,相关的状态和信息的get方法,其中包括手机SIM的状态和信息、
+电信网络的状态及手机用户的信息
+可能会用到的权限:<uses-permission
+android:name="android.permission.READ_PHONE_STATE"/>读取手机状态的权限
+获取手机IMSI 		getSubscriberId()
+获取手机IMEI 		getDeviceId()
+获取网络类型 		getNetworkType()
+移动终端的类型 		getPhoneType()
+SIM卡提供商的国家代码 getSimCountryIso()
+设备运营商名称 		getSimOperatorName()
+
+2.WifiManager
+WifiManager提供wifi管理的各种主要API，主要包含wifi的扫描，建立
+连接，配置等
+可能会用到的权限:<uses-permission
+android:name="android.permission.ACCESS_WIFI_STATE" />允许访问wifi的状态
+是否开启 			isWifiEnabled()
+设置开启/关闭wifi 	setWifiEnabled(boolean)
+WIFI状态参数：
+WifiManager.WIFI_STATE_DISABLED : WIFI网卡不可用
+WifiManager.WIFI_STATE_DISABLING : WIFI网卡正在关闭
+WifiManager.WIFI_STATE_ENABLED : WIFI网卡可用
+WifiManager.WIFI_STATE_ENABLING : WIFI网正在打开
+WifiManager.WIFI_STATE_UNKNOWN : 未知网卡状态
+
+WifiInfo wifi信息类
+建立连接后的wifi信息。包含ip、mac地址、连接速度等信息。
+获取对象:WifiInfo wInfo = wifiManager.getConnectionInfo();
+获取BSSID 		getBSSID()
+获得SSID是否被隐藏 	getHiddenSSID()
+获取IP地址 			getIpAddress()
+获得连接的速度 		getLinkSpeed()
+获得Mac地址 		getMacAddress()
+获得802.11n网络的信号getRssi()
+获得SSID			getSSID()
+
+3.Build
+获取设备信息
+RADIO 			设备系统基带版本
+VERSION.RELEASE 设备系统版本号
+VERSION.SDK_INT 设备系统SDK版本号
+ID 				设备设置版本号
+Build.CPU_ABI 	设备CPU类型名称
+BRAND  			设备品牌
+MANUFACTURER  	设备制造商
+MODEL  			设备型号名称
+
+4.DisplayMetrics
+DisplayMetrics类的对象记录了一些常用的信息，包含了显示信息，
+大小，维度，字体等。
+最常用的获取屏幕尺寸:
+DisplayMetrics dm = new DisplayMetrics();
+getWindowManager().getDefaultDisplay().getM
+etrics(dm);
+dm.widthPixel		屏幕宽度像素
+dm.heightPixel		屏幕高度像素
+dm.density			屏幕密度
+
+5.Camera
+安卓的摄像头
+可能会用到的权限:
+使用摄像头权限
+<uses-permission android:name="android.permission.CAMERA" />
+录制音频权限
+<uses-permission android:name="android.permission.RECORD_AUDIO" />
+手机硬件是否包含摄像头
+<uses-feature android:name = "android.hardware.camera" />
+手机摄像头是否具有自动对焦功能
+<uses-feature android:name = "android.hardware.camera.autofocus" />
+Camera有两个内部类
+1>Camera.Parameters   相机的参数类
+2>Camera.Size		     相机的尺寸类
+获取摄像头支持的最大像素
+Camera camera = Camera.open();
+Camera.Parameters parameters = camera.getParameters();
+List<Size> sizes = parameters.getSupportedPictureSizes();
+for (Size s : sizes) {
+s. width //摄像头的宽度
+s. height //摄像头的高度
+｝
+
+6.Filefilter
+文件名过滤器接口
+该接口定义了一个public boolean accept(File file)方法，参数File
+file为正在被过滤的文件。FilenameFilter.accept返回false的文件会
+被过滤掉。
+获取cpu数量:
+File file = new File("sys/devices/system/cpu/");
+		File[] cpus = file.listFiles(new FileFilter(){
+
+			@Override
+			public boolean accept(File pathname) {
+				if (Pattern.matches("cpu[0-9]", pathname.getName())) {
+					return true;
+				}
+				return false;
+			}
+			
+		});

@@ -1,0 +1,20 @@
+一. ActionBar制作流程
+1. 创建ActionBar的子视图
+2. 项目中有三个界面都用到了ActionBar,所以对共同的代码进行抽取
+,抽取出父类MyActionBarActivity
+3. 在父类中定义公用的函数
+protected void initActionBar(int left,String text,int right,OnClickListener on){
+		bar = (ActionBar) this.findViewById(R.id.actionbar);
+		bar.initActionBar(left, text, right,on);
+	}
+该函数提供子类使用
+4. 每个子类都继承于MyActionBarActivity,将图片和点击的监听传递到函数中
+
+二.制作主界面下面的文字组
+将所有的文字写入String.xml
+将所有的公用的属性写入style.xml
+将所有公用的尺寸写入dimens.xml
+将公用的xml文件用include标签来引用
+
+
+三. 制作设置界面

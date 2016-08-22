@@ -1,0 +1,53 @@
+一. 广播接收者
+Activity
+Service
+BroadcastReceiver		广播接收者
+概念:与Service都是运行在后台的,但是处理的数据量,广播接收者比较小
+原理:安卓手机中内置了一个类似于收音机的组件,功能主要分为发送广播以及接收广播
+安卓手机时不时的会发送一些系统的广播,比如短消息来了,有电话来了,电池电量改变了等...
+这时候第三方应用程序可以注册一个广播接收者,将广播接收者接收的频道调整成你要接收的频道,
+去接收系统发送的广播以及携带的数据
+
+
+>>>>>接收广播
+注册方式分类:
+1. 动态注册
+通过调用registerReceiver(receiver, filter)函数进行手动注册
+br = new BatteryReceiver();
+registerReceiver(br, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
+通过调用unregisterReceiver(br);函数解除注册
+2. 静态注册
+通过在清单文件中进行注册
+<receiver android:name=".MyStaticReceiver2"
+            	android:permission="com.baidu"
+            >
+            <!-- 添加频道 priority表示接收广播的优先级-->
+            <intent-filter
+                android:priority="700"
+                 >
+                <action android:name="edu.feicui.broadcastreceiver"/>
+                
+            </intent-filter>
+        </receiver>
+        
+name=".MyStaticReceiver2"是广播接收者的类
+android:permission="com.baidu"是要接收的广播的权限
+android:priority="700"广播接收者的优先级
+<action android:name="edu.feicui.broadcastreceiver"/>广播接收的频道
+
+动态注册和静态注册的区别?
+动态注册的广播的生命周期是随着Activity的生命周期的,静态广播是当应用打开的时候就常驻在应用程序中的
+
+
+
+>>>>>发送广播
+1. 发送无序广播
+2. 发送有序广播(可以拦截)
+发送广播可以指定广播的频道和权限
+Intent it = new Intent(PINDAO);//频道
+sendBroadcast(it, "com.baidu");//权限--无序广播(不能拦截)
+sendOrderedBroadcast(it, "com.baidu");//有序广播
+
+拦截广播
+有序广播是可以拦截的,如果一个广播被拦截,则其他广播就无法继续接收到该广播
+abortBroadcast();

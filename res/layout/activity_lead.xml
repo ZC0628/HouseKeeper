@@ -1,0 +1,63 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LeadActivity" 
+    android:background="@color/white">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_lead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"/>
+    
+    <LinearLayout 
+        android:id="@+id/lead_dian"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal"
+       android:layout_alignParentBottom="true"
+       android:layout_marginBottom="50dp"
+       android:layout_centerHorizontal="true"
+        >
+        
+      <ImageView
+          android:id="@+id/vp_lead_left"
+          android:layout_width="@dimen/lead_imageview_with"
+          android:layout_height="@dimen/lead_imageview_height"
+          android:src="@drawable/slide02"
+          android:contentDescription="第一个点"
+          />  
+      <ImageView
+          android:id="@+id/vp_lead_middle"
+          android:layout_width="@dimen/lead_imageview_with"
+          android:layout_height="@dimen/lead_imageview_height"
+          android:src="@drawable/slide01"
+          android:layout_marginLeft="5dp"
+          android:layout_marginRight="5dp"
+          android:contentDescription="第二个点"
+          />     
+      <ImageView
+          android:id="@+id/vp_lead_right"
+          android:layout_width="@dimen/lead_imageview_with"
+          android:layout_height="@dimen/lead_imageview_height"
+          android:src="@drawable/slide01"
+          android:contentDescription="第三个点"
+          />   
+        
+    </LinearLayout>
+      <TextView
+          android:id="@+id/txt_lead"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/txt_guide_jump"
+          android:background="@drawable/lead_textview_jumpup"
+          android:padding="5dp"
+          android:textSize="20sp"
+          android:visibility="invisible"
+		  android:layout_above="@id/lead_dian"	
+		  android:layout_marginLeft="130dp"
+		  android:layout_marginBottom="35dp"
+          />    
+
+</RelativeLayout>

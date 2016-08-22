@@ -1,0 +1,32 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SettingActivity" 
+    android:orientation="vertical">
+	
+    <!-- 公用的导航条 -->
+    <include   
+        layout="@layout/public_actionbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    
+    <View 
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:background="@color/gainsboro"
+        />
+    
+    <!-- 滚动条     只能有一对根标签-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <include 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            layout="@layout/public_setting_list"
+            />
+    </ScrollView>  
+   
+</LinearLayout>

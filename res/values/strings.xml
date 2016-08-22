@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 通讯录中的所有文字 -->
+<resources>
+
+    <string name="app_name">安卓手机管家</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_logo">LogoActivity</string>
+
+    <!-- activity_telephone.xml -->
+    <string name="title_telephone">一站式号码服务平台</string>
+
+    <!-- activity_telephone_item.xml -->
+    <string name="text_telephone_item">本地电话</string>
+    <string name="title_activity_telephonelist">TelephonelistActivity</string>
+    <string name="title_activity_lead">安卓手机管家</string>
+    <string name="txt_guide_jump">立即体检</string>
+    <string name="title_activity_phone_speed">PhoneSpeedActivity</string>
+    <string name="title_activity_software_manage">SoftwareManageActivity</string>
+    <string name="title_activity_phone_test">PhoneTestActivity</string>
+    <string name="title_activity_file_manage">FileManageActivity</string>
+    <string name="title_activity_cleaner">CleanerActivity</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_filemanageshow">FileManageShowActivity</string>
+
+    <!-- 主界面文字组 -->
+    <string name="activity_main_phonespeed">手机加速</string>
+    <string name="activity_main_softwaremanage">软件管理</string>
+    <string name="activity_main_phonetest">手机检测</string>
+    <string name="activity_main_phonecall">通讯大全</string>
+    <string name="activity_main_filemanage">文件管理</string>
+    <string name="activity_main_cleaner">垃圾清理</string>
+    <string name="title_activity_about">AboutActivity</string>
+    <string name="title_activity_setting">SettingActivity</string>
+    <string name="main_title">安卓手机管家</string>
+
+    <!-- about界面 文字组 -->
+    <string name="about_version">V1.0.0</string>
+    <string name="about_title">关于我们</string>
+    <string name="setting_title">设置</string>
+    <!-- Setting界面条目 -->
+    <string name="setting_openon">开机启动</string>
+    <string name="setting_notification">通知图标</string>
+    <string name="setting_newspush">消息推送</string>
+    <string name="setting_help">帮助说明</string>
+    <string name="setting_advice">意见反馈</string>
+    <string name="setting_feiendsshare">好友分享</string>
+    <string name="setting_versionupdating">版本更新</string>
+    <string name="setting_aboutus">关于我们</string>
+
+    <!-- 软件管理界面下方的文字组 -->
+    <string name="softwaremanage_allsoftware">所有软件</string>
+    <string name="softwaremanage_systemsoftware">系统软件</string>
+    <string name="softwaremanage_usersoftware">用户软件</string>
+    <string name="title_activity_softwaremanage_list">SoftwaremanageListActivity</string>
+
+</resources>

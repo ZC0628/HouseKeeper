@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white" >
+    
+    <!-- 导航条 -->
+    <com.zc.contacts.view.ActionBar
+        android:id="@+id/actionbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    
+    <View 
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:background="@color/gainsboro"
+        />
+    
+    <!-- 圆   -->
+    <include 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        layout="@layout/public_main_circle"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1"/>
+    
+    
+    <!-- 第一行 -->
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        
+        <TextView 
+            android:id="@+id/main_phonespeed"
+            style="@style/activity_main_Group"
+            android:text="@string/activity_main_phonespeed"
+            android:drawableTop="@drawable/phonespeed"
+            />  
+        <TextView 
+            android:id="@+id/main_softwaremanage"
+            style="@style/activity_main_Group"
+            android:drawableTop="@drawable/softwaremanage"
+            android:text="@string/activity_main_softwaremanage"
+            />
+        <TextView 
+            android:id="@+id/main_phonetest"
+            style="@style/activity_main_Group"
+            android:drawableTop="@drawable/phonetest"
+            android:text="@string/activity_main_phonetest"
+            />
+    </LinearLayout>
+    
+     <!-- 第二行 -->
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        
+        <TextView
+            android:id="@+id/main_phonecall"
+            style="@style/activity_main_Group"
+            android:drawableTop="@drawable/phonecall"
+            android:text="@string/activity_main_phonecall" 
+            />
+
+        <TextView
+            android:id="@+id/main_filemanagee"
+            style="@style/activity_main_Group"
+            android:drawableTop="@drawable/filemanages"
+            android:text="@string/activity_main_filemanage" 
+           />
+
+        <TextView
+            android:id="@+id/main_cleaner"
+            style="@style/activity_main_Group"
+            android:drawableTop="@drawable/cleaner"
+            android:text="@string/activity_main_cleaner" />
+
+    </LinearLayout>
+
+</LinearLayout>

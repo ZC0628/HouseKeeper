@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+	<!-- layer-list标签————设置图片层叠的效果 -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+    <!-- 一个item表示一个层 -->	
+    <item>
+        <shape >	<!-- 用于制作形状 -->
+            <corners android:radius="8dp"/> <!-- 角的半径 -->
+            <solid android:color="#00FF7F"/> <!-- 描边的颜色 -->
+        </shape>
+    </item>
+    
+    
+    <!-- 第二个层 -->
+    <item>
+        <clip>		<!-- 裁剪一部分 -->
+        
+        <shape >	<!-- 用于制作形状 -->
+            <corners android:radius="8dp"/> <!-- 角的半径 -->
+            <solid android:color="#ff00ffff"/> <!-- 描边的颜色 -->
+        </shape>
+        
+     </clip>   
+        
+    </item>
+
+</layer-list>

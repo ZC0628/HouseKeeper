@@ -1,0 +1,80 @@
+一.	线性布局专用属性layout_gravitiy以及通用属性gravity
+	layout_gravitiy ="center" 表示让控件自身对齐某个方向,如果线性布局是垂直方向,则只能对齐左右
+	
+	通用属性
+	android:gravity="center"	表示让控件中的子控件对齐某个方向
+	android:gravity="top|center_horizontal"	表示既往上对齐又水平居中
+
+二. 相对布局
+	是开发过程中使用频率最高的布局,而且是能够实现复杂布局的布局
+	1.放在某个控件的某个方向
+	 android:layout_toRightOf="@id/tv"	右边
+        android:layout_toLeftOf=""		左边
+        android:layout_above=""			上边
+        android:layout_below=""			下面
+        
+        
+        android:id="@+id/tv" 给某个控件添加编号,规范:全部小写,单词间隔用_	@+表示添加
+    
+    2.对齐某个控件的某个边
+    	android:layout_alignLeft="@id/bt1"			左边
+        android:layout_alignBottom="@id/bt1"		下面
+        android:layout_alignTop=""					上面
+        android:layout_alignRight=""				右边
+        	
+        	
+    3.对齐父控件的某个边
+        android:layout_alignParentBottom="true"		下面
+        android:layout_alignParentLeft=""			左边
+        android:layout_alignParentRight=""			右边
+        android:layout_alignParentTop=""			上面
+        
+    4.居中方式   
+      	相对布局专用属性   
+      	android:layout_centerHorizontal="true"		水平居中
+        android:layout_centerVertical="true"		垂直居中
+        android:layout_centerInParent="true"		完全居中
+        
+三. 设置控件之间间隙属性(通用属性)
+     	padding   内边距
+     	android:paddingLeft="5dp"		左边内边距
+    	android:paddingTop="10dp"		上边内边距
+    	android:paddingRight=""			右边内边距
+    	android:paddingBottom=""		下边内边距
+    	android:padding="10dp"			四周内边距
+     	margin	     外边距
+     	android:layout_marginLeft="10dp"
+        android:layout_marginRight=""
+        android:layout_marginTop=""
+        android:layout_marginBottom=""
+        android:layout_margin=""
+
+四. 如何在activity中找到某个控件对象
+1>给控件添加id
+2>在activity中调用findViewById(int id)来找到对应的控件对象,然后进行一个向下转型View->控件类型
+
+五. 如何给按钮设置点击的监听
+方式一
+1.在xml文件中添加id
+2.在activity中设置手机布局
+3.找到按钮对象-findViewById(int id)
+4.调用View类中的setOnClickListener(OnClickLinstener on)函数来设置点击的监听
+并且重写onClick(View v)方法,当点击按钮的时候就会调用此方法
+
+方式二
+1.在xml文件中添加id
+2.在activity中设置手机布局
+3.找到按钮对象-findViewById(int id)
+4.让当前类实现OnClickListener接口,重写onClick方法
+5.调用View类中的setOnClickListener(OnClickLinstener on)函数来设置点击的监听,参数是当前类的对象
+
+方式三
+1.在xml文件要点击的按钮标签中设置onClick属性,属性值对应的是一个函数的名称
+2.在Activity中写上对应名称的函数,参数必须是View
+
+六. EditText类中的函数
+Editable edit = getText();
+String s = edit.toString();
+
+Toast类 打印短消息
+Toast.makeText(Context context,String text,int duration).show();

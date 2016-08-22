@@ -1,0 +1,30 @@
+一.SQLiteDabase笔记二
+如果数据库文件不是事先准备好的,而是在应用中通过代码创建的
+使用步骤:
+1. 创建类继承于SQLiteOpenHelper,重写3个函数
+1>onCreate
+调用的前提,必须调用SQLiteOpenHelper类中的函数getWritableDatabase来打开数据库的时候
+如果数据库文件不存在则调用
+2>onUpgrade
+当数据库版本升级的时候调用
+3>onOpen
+可选方法,每次打开数据库的时候调用
+
+
+二.ListView的背景选择器
+1. 在drawable文件夹中定义一个xml文件,根标签定义为selector
+子标签item表示背景的每一种状态
+  如果状态为按下,那么显示的图片是home_entry_item_pressed
+ <item android:state_pressed="true" android:drawable="@drawable/home_entry_item_pressed"/>
+ 如果状态不是按下,那么显示的图片是home_entry_item_normal
+ <item android:state_pressed="false" android:drawable="@drawable/home_entry_item_normal"/>
+ 
+2. 在ListView的子视图根标签上添加background属性,去引用这个文件
+
+如何去除ListView的分割线
+android:divider="#00000000"
+如何调整ListView每个Item的高度?
+主要调整子视图中内部控件的高度,随着内部控件高度的增加,item的高度自然就增加了
+
+
+

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <View 
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:background="@color/gainsboro"
+        />
+    
+    <!-- 所有软件 -->
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/home_entity_item"
+        android:clickable="true"
+        android:onClick="allsoftware"
+        >
+        <TextView 
+           style="@style/SettingText"
+           android:text="@string/softwaremanage_allsoftware"
+           android:layout_centerVertical="true"
+           android:layout_marginLeft="15dp"/>
+      <ImageView
+          style="@style/SettingImageview"
+          android:layout_centerVertical="true"/>
+    </RelativeLayout>
+    
+    <View 
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:background="@color/gainsboro"
+        />
+    
+    <!-- 系统软件 -->
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/home_entity_item"
+        android:clickable="true"
+        android:onClick="systemsoftware"
+        >
+        <TextView 
+           style="@style/SettingText"
+           android:text="@string/softwaremanage_systemsoftware"
+           android:layout_centerVertical="true"
+           android:layout_marginLeft="15dp"/>
+      <ImageView
+          style="@style/SettingImageview"
+          android:layout_centerVertical="true"/>
+    </RelativeLayout>
+    
+    <View 
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:background="@color/gainsboro"
+        />
+    
+    <!-- 用户软件 -->
+	<RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/home_entity_item"
+        android:clickable="true"
+        android:onClick="usersoftware"
+        >
+        <TextView 
+           style="@style/SettingText"
+           android:text="@string/softwaremanage_usersoftware"
+           android:layout_centerVertical="true"
+           android:layout_marginLeft="15dp"/>
+      <ImageView
+          style="@style/SettingImageview"
+          android:layout_centerVertical="true"/>
+    </RelativeLayout>
+    
+    <View 
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:background="@color/gainsboro"
+        />
+    
+</LinearLayout>

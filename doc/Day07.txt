@@ -1,0 +1,33 @@
+一. values文件夹中的其他文件
+1.Strings.xml-存放所有的文字
+2.colors.xml-存放工程中常用的几种颜色
+3.dimens.xml-存放工程中常用的尺寸
+4.styles.xml-存放工程中常用的控件样式,可以有继承关系,在xml文件中通过sytle属性来引用style
+
+二. 安卓的存储方式
+1. 文件存储(IO流读写)
+手机内存
+	路径:data/data/项目包名/xxx..
+手机SD卡
+	路径:mnt/sdcard/xxx...
+	
+	由于开发时安卓手机款式很多,那么路径可能不一致,这时候会用Envroment
+	Envroment可以获取SD卡路径,获取手机内存路径,获取SD卡的状态
+注意:
+写入SD卡需要添加权限,
+在SD卡中创建文件夹也需要权限
+	<!-- 写入SD卡的权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <!-- 允许在SD卡中创建文件夹 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+	
+2. SharedPreferences  简单编辑器
+优点:简单方便
+适用场合:存储基本数据类型,少量的
+		SharedPreferences sp =getSharedPreferences("myfile",Context.MODE_PRIVATE);
+		//获取编辑器
+		Editor edit = sp.edit();
+		//存数据
+		edit.putInt("score", 50);
+		//提交(重要)
+		edit.commit();

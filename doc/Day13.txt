@@ -1,0 +1,39 @@
+一.MediaPlayer
+MediaPlayer是安卓中常用的播放视频和音频的媒体
+生命周期
+1. 空闲状态		Idle		调用reset()
+2. 初始化			init		调用setDataSource(String str)
+3. 预备			prepare		调用prepare()或者prepareAsync()
+4. 开始			start		调用start()
+5. 暂停			pause		调用pause()
+6. 停止			stop		调用stop()
+7. 结束			end			调用release()
+
+prepare()或者prepareAsync()的区别?
+prepare函数用播放本地音乐
+prepareAsync函数用于播放网络音乐(常用)
+
+二. Service
+Service是安卓的四大组件之一,它经常用于在后台执行一些耗时的操作,
+如:播放音乐,下载数据等
+
+Activity和Service的区别?
+Activity
+1. 在前台运行
+2. 可以与用户交互
+3. 生命周期不同
+4. 可以自己运行
+Service
+1. 在后台运行
+2. 不可以与用户交互
+3. 生命周期不同
+4. 不能自己运行
+
+音乐在线程中播放和在服务中播放有什么区别?
+当系统内存不足时,安卓会将优先级比较低的进程杀死,进程的优先级分类如下:
+1. 前台进程		可以和用户交互的界面
+2. 可视进程		可以看见但是不能交互
+3. 服务进程		Activity中包含Service
+4. 后台进程		普通的Activity
+5. 空进程			不包含活动状态的进程,一般用于缓存某些数据
+所以在服务中播放音乐不容易被安卓系统杀死,确保安全性

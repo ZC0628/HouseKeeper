@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+roate ———— 旋转动画
+android:fromDegrees="0"  旋转的角度  从0到360
+android:toDegrees="360"
+ -->
+<rotate
+android:duration="2000"
+android:repeatCount="3"
+android:repeatMode="restart"   
+android:fromDegrees="0"
+android:toDegrees="360"   
+android:pivotX="100%"
+android:pivotY="100%"
+android:fillAfter="true"
+xmlns:android="http://schemas.android.com/apk/res/android"/>
+    
+
